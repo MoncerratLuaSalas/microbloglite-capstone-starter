@@ -1,0 +1,7 @@
+/* Posts Page CSS */
+
+.card {
+    max-width: 600px; /* Adjust this value as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
