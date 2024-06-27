@@ -24,22 +24,37 @@
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="styles/posts.css" />
 
-    <title>/POSTS</title>
+    <title>Registration</title>
 
     <!-- Run BEFORE page is finished loading (before window.onload): -->
     <script src="scripts/auth.js"></script>
-    <script>
-      if (isLoggedIn() === false) window.location.replace("/");
-    </script>
   </head>
   <body>
     <header>
       <h1>Registration</h1>
     </header>
-
-
+    
+    <div class="container mt-5">
+      <form id="registerForm">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" required>
+        </div>
+        <div class="mb-3">
+          <label for="fullName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="fullName" required>
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary" id="registerButton">Register</button>
+      </form>
+      <div id="successMessage" class="alert alert-success mt-3" style="display: none;">Registration successful! Redirecting...</div>
+    </div>
 
     <!-- Page-specific code -->
-    <script src="scripts/posts.js"></script>
+    <script src="scripts/landing.js"></script>
   </body>
 </html>
+
