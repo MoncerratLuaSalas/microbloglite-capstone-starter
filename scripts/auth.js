@@ -1,32 +1,18 @@
 "use strict";
 
 const apiBaseURL = "http://microbloglite.us-east-2.elasticbeanstalk.com";
-// Backup server (mirror):   "https://microbloglite.onrender.com"
 
-// NOTE: API documentation is available at /docs 
-// For example: http://microbloglite.us-east-2.elasticbeanstalk.com/docs
-
-// You can use this function to get the login data of the logged-in
-// user (if any). It returns either an object including the username
-// and token, or an empty object if the visitor is not logged in.
 function getLoginData () {
     const loginJSON = window.localStorage.getItem("login-data");
     return JSON.parse(loginJSON) || {};
 }
 
-// You can use this function to see whether the current visitor is
-// logged in. It returns either true or false.
 function isLoggedIn () {
     const loginData = getLoginData();
     return Boolean(loginData.token);
 }
 
-// This function is already being used in the starter code for the
-// landing page, in order to process a user's login. READ this code,
-// and feel free to re-use parts of it for other fetch() requests
-// you may need to write.
 function login (loginData) {
-    // POST /auth/login
     const options = { 
         method: "POST",
         headers: {
@@ -39,31 +25,27 @@ function login (loginData) {
         .then(response => response.json())
         .then(loginData => {
             if (loginData.message === "Invalid username or password") {
-                console.error(loginData)
-                // Here is where you might want to add an error notification 
-                // or other visible indicator to the page so that the user is  
-                // informed that they have entered the wrong login info.
+                console.error(loginData);
+                alert("Invalid username or password");
                 return null;
             }
 
             window.localStorage.setItem("login-data", JSON.stringify(loginData));
             document.getElementById("successMessage").style.display = "block";
             setTimeout(() => {
-                window.location.assign("/index.html");  // redirect after showing success message
+                window.location.assign("/index.html");
             }, 2000);
 
             return loginData;
+        })
+        .catch(error => {
+            console.error('Error:', error);
         });
 }
 
-// This is the logout() function you will use for any logout button
-// which you may include in various pages in your app. Again, READ this
-// function and you will probably want to re-use parts of it for other
-// fetch() requests you may need to write.
 function logout () {
     const loginData = getLoginData();
 
-    // GET /auth/logout
     const options = { 
         method: "GET",
         headers: { 
@@ -75,7 +57,7 @@ function logout () {
         .then(response => response.json())
         .then(data => console.log(data))
         .finally(() => {
-            window.localStorage.removeItem("login-data");  // remove login data from LocalStorage
-            window.location.assign("/");  // redirect back to landing page
+            window.localStorage.removeItem("login-data");
+            window.location.assign("/");
         });
 }

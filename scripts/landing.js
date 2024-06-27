@@ -1,30 +1,41 @@
 "use strict";
 
-const registerForm = document.querySelector("#registerForm");
+document.addEventListener("DOMContentLoaded", function() {
+    const registerForm = document.querySelector("#registerForm");
 
-registerForm.onsubmit = function (event) {
-    // Prevent the form from refreshing the page,
-    // as it will do by default when the Submit event is triggered:
-    event.preventDefault();
+    if (registerForm) {
+        registerForm.onsubmit = function(event) {
+            event.preventDefault();
 
-    // We can use registerForm.username (for example) to access
-    // the input element in the form which has the ID of "username".
-    const registerData = {
-        username: registerForm.username.value,
-        fullName: registerForm.fullName.value,
-        password: registerForm.password.value,
+            const registerData = {
+                username: registerForm.username.value,
+                fullName: registerForm.fullName.value,
+                password: registerForm.password.value,
+            };
+
+            registerForm.querySelector("#registerButton").disabled = true;
+            register(registerData);
+        };
     }
 
-    // Disables the button after the form has been submitted already:
-    registerForm.registerButton.disabled = true;
+    const loginForm = document.querySelector("#login");
 
-    // Time to actually process the registration using the function from auth.js!
-    register(registerData);
-};
+    if (loginForm) {
+        loginForm.onsubmit = function(event) {
+            event.preventDefault();
+
+            const loginData = {
+                username: loginForm.username.value,
+                password: loginForm.password.value,
+            };
+
+            login(loginData);
+        };
+    }
+});
 
 function register(registerData) {
-    // POST /api/users
-    const options = { 
+    const options = {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -37,13 +48,9 @@ function register(registerData) {
         .then(data => {
             if (data.error) {
                 console.error(data.error);
-                // Here is where you might want to add an error notification 
-                // or other visible indicator to the page so that the user is  
-                // informed that there was an issue with their registration.
                 return null;
             }
 
-            // If registration is successful, log the user in
             login({
                 username: registerData.username,
                 password: registerData.password,
