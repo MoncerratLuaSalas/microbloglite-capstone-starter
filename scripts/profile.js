@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
       method: 'GET',
       headers: {
         'accept': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkxlQnJvbklzS2luZyIsImlhdCI6MTcxOTQxOTg4MCwiZXhwIjoxNzE5NTA2MjgwfQ._eGWEuQmJc4oeXb2oQrWnEstsj_1wc29kbVcNU-zshU',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkxlQnJvbklzS2luZyIsImlhdCI6MTcxOTUwNjU3MSwiZXhwIjoxNzE5NTkyOTcxfQ.m2eXxderSgsgTB4rpv3rCaDFPtwJ47d0susN_z60TpQ',
       }
     })
     .then(response => response.json())
@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
       method: 'POST',
       headers: {
         'accept': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkxlQnJvbklzS2luZyIsImlhdCI6MTcxOTQxOTg4MCwiZXhwIjoxNzE5NTA2MjgwfQ._eGWEuQmJc4oeXb2oQrWnEstsj_1wc29kbVcNU-zshU',
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkxlQnJvbklzS2luZyIsImlhdCI6MTcxOTUwNjU3MSwiZXhwIjoxNzE5NTkyOTcxfQ.m2eXxderSgsgTB4rpv3rCaDFPtwJ47d0susN_z60TpQ',
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({

@@ -18,7 +18,7 @@ function displayPost(post) {
 fetch('http://microbloglite.us-east-2.elasticbeanstalk.com/api/posts?limit=100&offset=0', {
     headers: {
         'accept': 'application/json',
-        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkxlQnJvbklzS2luZyIsImlhdCI6MTcxOTQxOTg4MCwiZXhwIjoxNzE5NTA2MjgwfQ._eGWEuQmJc4oeXb2oQrWnEstsj_1wc29kbVcNU-zshU'
+        'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkxlQnJvbklzS2luZyIsImlhdCI6MTcxOTUwNjU3MSwiZXhwIjoxNzE5NTkyOTcxfQ.m2eXxderSgsgTB4rpv3rCaDFPtwJ47d0susN_z60TpQ'
     }
 })
 .then(response => response.json())
