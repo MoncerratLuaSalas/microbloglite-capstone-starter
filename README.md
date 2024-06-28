@@ -1,5 +1,16 @@
-# Enjoy the Microblog Project and the MicroblogLite API!
+Blog Capstone
 
-Don't forget to read the [*MicroblogLite* API docs](http://microbloglite.us-east-2.elasticbeanstalk.com/docs) and experiment with the API in *Postman!*
+This website is made for uses to post their most unhinged thoughts in a judgemnet free zone.
 
-Practice and experimentation provide experience, and experience provides confidence.
+<p>
+
+  <img src="images/login.PNG" alt="Login" width="738">
+  <img src="images/newuswer.PNG" alt="Registration" width="738">
+  <img src="images/posts.PNG" alt="Posts" width="738">
+  <img src="images/profile.PNG" alt="Profile" width="738">
+
+</p>
+
+Interesting code is code that I used to display previous post from user that is logged in.
+
+<<img src="images/code.PNG" alt="Code" width="738">
