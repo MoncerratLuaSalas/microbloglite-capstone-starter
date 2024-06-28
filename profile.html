@@ -18,6 +18,10 @@
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.8/css/line.css"
+    />
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
@@ -37,9 +41,29 @@
     <script>
       if (isLoggedIn() === false) window.location.replace("/");
     </script>
+
+    <style>
+
+      .container-form {
+        max-width: 600px; 
+        margin: auto;
+        margin-top: 20px; 
+      }
+
+
+      #postsContainer {
+        max-width: 600px; 
+        margin: auto;
+        margin-top: 20px; 
+      }
+
+      header {
+        text-align: center;
+      }
+    </style>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
       <div class="container">
         <a class="navbar-brand" href="profile.html">Unhinged</a>
         <button
@@ -70,13 +94,29 @@
         </div>
       </div>
     </nav>
+    <div class="sidebar">
+      <a href="explore.html"> <i class="uil uil-search"></i> Explore Page </a>
+      <a href="analytics.html">
+        <i class="uil uil-chart-line"></i> Analytics
+      </a>
+      <a href="settings.html"> <i class="uil uil-setting"></i> Settings </a>
+      <a href="messages.html"> <i class="uil uil-envelope"></i> Messages </a>
+    </div>
+    <div class="chat-sidebar">
+      <h2>Chat</h2>
+      <div class="chat-box">
+        <p>John: Hello!</p>
+        <p>Jane: Hi there!</p>
+      </div>
+      <input type="text" placeholder="Type a message..." />
+    </div>
     <header>
       <h1>PROFILE</h1>
       <h5>Don't be shy, say it with your chest...</h5>
     </header>
 
     <!-- Form to create a new post -->
-    <div class="container mt-4">
+    <div class="container-form">
       <form id="postForm">
         <div class="mb-3">
           <label for="postText" class="form-label">New Post</label>

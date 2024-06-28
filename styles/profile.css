@@ -1,0 +1,79 @@
+/* Profile Page CSS */
+
+header {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 56px; /* Adjust this value to match the height of the navbar */
+  left: 0;
+  height: calc(100% - 56px); /* Adjust this value to match the height of the navbar */
+  width: 200px;
+  background-color: #f8f9fa;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar a {
+  display: block;
+  padding: 15px;
+  margin: 10px 0;
+  text-decoration: none;
+  color: #000;
+  text-align: center;
+  width: 100%;
+}
+
+.sidebar a:hover {
+  background-color: #ddd;
+}
+
+/* Chatbox CSS */
+
+.chat-sidebar {
+  position: fixed;
+  top: 56px; /* Adjust this value to match the height of the navbar */
+  right: 0;
+  height: calc(100% - 56px); /* Adjust this value to match the height of the navbar */
+  width: 250px;
+  background-color: #f8f9fa;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.chat-sidebar h2 {
+  text-align: center;
+}
+
+.chat-box {
+  width: 90%;
+  max-height: calc(100% - 200px); /* Adjust to leave space for input and header */
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 10px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.chat-box p {
+  margin: 5px 0;
+}
+
+.chat-sidebar input {
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.container {
+  max-width: 800px; /* Adjust container max-width */
+  margin-top: 20px; /* Adjust margin-top as needed */
+}
+
